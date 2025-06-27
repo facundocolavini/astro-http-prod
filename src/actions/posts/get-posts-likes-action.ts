@@ -10,7 +10,7 @@ export const getPostLikes = defineAction({
     if (!post) {
       return { likes: 0, exists: false };
     }
-//
+
     return {
       likes: post.likes,
       exists: true,
