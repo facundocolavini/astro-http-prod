@@ -11,6 +11,9 @@ export const getPostLikes = defineAction({
       return { likes: 0, exists: false };
     }
 
+    console.log('TURSO_DATABASE_URL:', process.env.TURSO_DATABASE_URL);
+    console.log('TURSO_AUTH_TOKEN:', process.env.TURSO_AUTH_TOKEN ? 'Present' : 'Missing');
+
     return {
       likes: post.likes,
       exists: true,
