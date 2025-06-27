@@ -7,6 +7,7 @@ export const updatePostLikes = defineAction({
   input: z.object({
     postId: z.string(),
     increment: z.number(),
+    
   }),
   handler: async ({ postId, increment }) => {
     // Busca el post en la base de datos
