@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
 import { Posts, db, eq } from 'astro:db';
 
 export const prerender = false;
@@ -34,10 +33,7 @@ export const GET: APIRoute = async ({ params, request }) => {
 
 export const PUT: APIRoute = async ({ params, request }) => {
   const postId = params.id ?? '';
-  console.log(postId, 'postId');
-  const postStatic = getCollection('blog')
 
-  // get the post from the static collection
   const posts = await db.select().from(Posts).where(eq(Posts.id, postId));
   const { likes = 0 } = await request.json();
 
